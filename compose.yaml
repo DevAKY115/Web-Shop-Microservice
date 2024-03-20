@@ -1,0 +1,17 @@
+
+
+
+services:
+  microservice-naming-server:
+    container_name: microservice-naming-server
+    image: microservice-naming-server
+    build:
+      context: ./naming-server
+      dockerfile: ./Dockerfile
+    networks:
+      - web-shop-network
+    ports:
+      - 8761:8761
+
+networks:
+  web-shop-network:
